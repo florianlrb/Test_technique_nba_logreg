@@ -13,7 +13,7 @@ Avoir généré le modèle et les seuils depuis le notebook :
 - `model_final_explained.joblib`
 - `thresholds_final_explained.json`
 
-Par défaut, l'API les cherche dans `/mnt/data/`. Vous pouvez changer via variables d'env.
+Par défaut, l'API les cherche dans `/mnt/data/`. Modifiable via variables d'env.
 
 ### 1) Installer les dépendances
 ```bash
@@ -54,8 +54,8 @@ Réponse (exemple) :
 
 ## Variables d'environnement
 
-- `MODEL_PATH` : chemin du bundle .joblib (par défaut `/mnt/data/model_final_explained.joblib`)
-- `THRESHOLDS_PATH` : chemin du JSON des seuils (par défaut `/mnt/data/thresholds_final_explained.json`)
+- `MODEL_PATH` : chemin du bundle .joblib (par défaut `model_final.joblib`)
+- `THRESHOLDS_PATH` : chemin du JSON des seuils (par défaut `thresholds_final.json`)
 - `PRED_MODE` : `recall` | `balanced` | `precision` (par défaut `balanced`)
 - `DEFAULT_THRESHOLD` : seuil par défaut si pas de JSON ou mode non applicable (par défaut `0.5`)
 
