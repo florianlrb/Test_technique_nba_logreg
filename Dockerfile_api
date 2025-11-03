@@ -7,11 +7,11 @@ RUN pip install --no-cache-dir -r requirements_api.txt
 
 COPY app_api.py ./
 # Mount model & thresholds at runtime or bake them in:
-# COPY model_final_explained.joblib /mnt/data/model_final_explained.joblib
-# COPY thresholds_final_explained.json /mnt/data/thresholds_final_explained.json
+# COPY model_final_explained.joblib model_final.joblib
+# COPY thresholds_final_explained.json thresholds_final.json
 
-ENV MODEL_PATH=/mnt/data/model_final_explained.joblib
-ENV THRESHOLDS_PATH=/mnt/data/thresholds_final_explained.json
+ENV MODEL_PATH=model_final.joblib
+ENV THRESHOLDS_PATH=thresholds_final.json
 ENV PRED_MODE=balanced
 ENV DEFAULT_THRESHOLD=0.5
 
