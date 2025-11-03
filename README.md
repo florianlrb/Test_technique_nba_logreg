@@ -1,5 +1,5 @@
 
-# API : Question 2 (Intégration)
+# API : Intégration
 
 API REST **unitaire** pour servir le classifieur "5 ans NBA".
 - **/health**: statut + info modèle
