@@ -1,0 +1,7 @@
+{
+  "beta": 2.0,
+  "best_fbeta_threshold": 0.065,
+  "target_recall": 0.85,
+  "target_recall_threshold": 0.4551208319824426,
+  "average_precision": 0.8209761610196059
+}

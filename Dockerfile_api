@@ -1,0 +1,19 @@
+
+FROM python:3.11-slim
+
+WORKDIR /app
+COPY requirements_api.txt ./
+RUN pip install --no-cache-dir -r requirements_api.txt
+
+COPY app_api.py ./
+# Mount model & thresholds at runtime or bake them in:
+# COPY model_final_explained.joblib /mnt/data/model_final_explained.joblib
+# COPY thresholds_final_explained.json /mnt/data/thresholds_final_explained.json
+
+ENV MODEL_PATH=/mnt/data/model_final_explained.joblib
+ENV THRESHOLDS_PATH=/mnt/data/thresholds_final_explained.json
+ENV PRED_MODE=balanced
+ENV DEFAULT_THRESHOLD=0.5
+
+EXPOSE 8000
+CMD ["uvicorn", "app_api:app", "--host", "0.0.0.0", "--port", "8000"]
